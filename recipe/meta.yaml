@@ -1,5 +1,5 @@
 {% set name = "yaqd-mqtt" %}
-{% set version = "2021.3.0" %}
+{% set version = "2021.3.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-mqtt-{{ version }}.tar.gz
-  sha256: 43659537106963c4132780269c35ef5010338016610788dd5661b506fb0afea4
+  sha256: b18ceb7ed69a4fd81cc873872dd60378acd63aa1dbbe38d1a7c719eae1a70bc4
 
 build:
   number: 0
