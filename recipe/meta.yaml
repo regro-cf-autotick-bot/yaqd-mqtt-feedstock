@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-mqtt-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yaqd-mqtt-{{ version }}.tar.gz
   sha256: b18ceb7ed69a4fd81cc873872dd60378acd63aa1dbbe38d1a7c719eae1a70bc4
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - yaqd-mqtt-homie-sensor = yaqd_mqtt._mqtt_homie_sensor:MQTTHomieSensor.main
@@ -21,10 +21,10 @@ requirements:
   host:
     - pip
     - flit
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - paho-mqtt
-    - python >=3.7
+    - python >={{ python_min }}
     - yaqd-core >=2021.3.0
 test:
   imports:
@@ -34,6 +34,7 @@ test:
     - yaqd-mqtt-homie-sensor --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://yaq.fyi
